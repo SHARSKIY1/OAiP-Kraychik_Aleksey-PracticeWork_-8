@@ -88,7 +88,7 @@ class Program
                         sample.IndShow(index4);
                         break;
                     case 9:
-                        
+                        sample.Exit();
                         break;
                 }
             }

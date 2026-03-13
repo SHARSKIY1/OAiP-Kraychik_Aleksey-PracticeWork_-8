@@ -76,5 +76,10 @@ namespace Practice8
         {
             Console.WriteLine(this[index]);
         }
+
+        public void Exit()
+        {
+            Environment.Exit(0);
+        }
     }
 }
