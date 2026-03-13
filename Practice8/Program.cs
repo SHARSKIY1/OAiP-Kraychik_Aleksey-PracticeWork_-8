@@ -5,6 +5,10 @@ class Program
 {
     static void Main()
     {
+        AnotLabList anotherSamples = new AnotLabList();
+        anotherSamples.Add(0, 99, "ANOT", "ANOT", "ANOT", "ANOT");
+        anotherSamples.Add(1, 100, "ANOT", "ANOT", "ANOT", "ANOT");
+
         LabList sample = new LabList();
 
         do
@@ -17,7 +21,14 @@ class Program
             Console.WriteLine("6 - Получить количество элементов");
             Console.WriteLine("7 - Вывести список");
             Console.WriteLine("8 - Вывести элемент по индексу");
-            Console.WriteLine("9 - Выход");
+            Console.WriteLine("9 - Добавить элементы из другого листа в конец");
+            Console.WriteLine("10 - Добавить элементы из другого листа в указанную позицию");
+            Console.WriteLine("11 - Удалить элементы от индекса до индекса");
+            Console.WriteLine("12 - Очистить лист");
+            Console.WriteLine("13 - Найди элемент по условию");
+            Console.WriteLine("14 - Сортировать список по индексам");
+            Console.WriteLine("15 - повернуть список");
+            Console.WriteLine("16 - Удалить дубликаты");
 
             try
             {
@@ -88,7 +99,36 @@ class Program
                         sample.IndShow(index4);
                         break;
                     case 9:
-                        sample.Exit();
+                        sample.ListInList(anotherSamples);
+                        break;
+                    case 10:
+                        Console.WriteLine("Введите индекс куда вставить лист");
+                        int index5 = Convert.ToInt32(Console.ReadLine());
+                        sample.ListInListByInd(index5, anotherSamples);
+                        break;
+                    case 11:
+                        Console.WriteLine("Введите 1 индекс");
+                        int firindex = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Введите 2 индекс");
+                        int secindex = Convert.ToInt32(Console.ReadLine());
+                        sample.IndDelToInd(firindex, secindex);
+                        break;
+                    case 12:
+                        sample.Clear();
+                        break;
+                    case 13:
+                        Console.WriteLine("Напишите Id и найдёт 1 элемент больше этого Id");
+                        int Id6 = Convert.ToInt32(Console.ReadLine());
+                        sample.FindWithExer(Id6);
+                        break;
+                    case 14:
+                        sample.SortById();
+                        break;
+                    case 15:
+                        sample.Reverse();
+                        break;
+                    case 16:
+                        sample.Distinct();
                         break;
                 }
             }
